@@ -7,6 +7,7 @@ import { v4 as uuid } from 'uuid';
 
 import { Car } from './interfaces/car.interface';
 import { CreateCarDto } from './dtos/create-car.dto';
+import { UpdateCarDto } from './dtos/update-car.dto';
 
 @Injectable()
 export class CarsService {
@@ -50,5 +51,27 @@ export class CarsService {
     };
     this.cars.push(newCar);
     return newCar;
+  }
+
+  update(id: string, updateCarDto: UpdateCarDto) {
+    let carDB = this.findOneById(id);
+
+    if (updateCarDto?.id !== id) {
+      throw new BadRequestException(`Car id is not valid`);
+    }
+
+    this.cars = this.cars.map((car) => {
+      if (car.id === id) {
+        carDB = { ...carDB, ...updateCarDto, id };
+        return carDB;
+      }
+      return car;
+    });
+    return carDB;
+  }
+
+  delete(id: string) {
+    this.findOneById(id);
+    this.cars = this.cars.filter((car) => car.id !== id);
   }
 }
