@@ -52,4 +52,10 @@ Targets can be defined in the `package.json` or `projects.json`. Learn more [in 
 
 ## Ready to deploy?
 
-Just run `nx build demoapp` to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
+Just run
+
+```
+nx build car-dealership
+```
+
+to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
