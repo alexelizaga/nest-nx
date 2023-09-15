@@ -1,5 +1,11 @@
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
+# Create NestApp
+
+```
+nx g @nx/nest:app apps/pokedex
+```
+
 # Car DealShip
 
 ## Start the app
@@ -49,6 +55,12 @@ nx run-many -t <target1> <target2> -p <proj1> <proj2>
 ```
 
 Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/core-features/run-tasks).
+
+## Run many proyects
+
+```
+nx run-many -t serve -p car-dealership pokedex
+```
 
 ## Ready to deploy?
 
