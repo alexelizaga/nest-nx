@@ -74,4 +74,8 @@ export class CarsService {
     this.findOneById(id);
     this.cars = this.cars.filter((car) => car.id !== id);
   }
+
+  fillWithData(cars: Car[]) {
+    this.cars = cars;
+  }
 }
