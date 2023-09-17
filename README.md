@@ -6,6 +6,12 @@
 nx g @nx/nest:app apps/pokedex
 ```
 
+# MongoDB
+
+```
+docker-compose up -d
+```
+
 # Car DealShip
 
 ## Start the app
