@@ -1,7 +1,7 @@
 {
-  "name": "car-dealership",
+  "name": "pokedex",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/car-dealership/src",
+  "sourceRoot": "apps/pokedex/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -11,12 +11,12 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/car-dealership",
-        "main": "apps/car-dealership/src/main.ts",
-        "tsConfig": "apps/car-dealership/tsconfig.app.json",
-        "assets": ["apps/car-dealership/src/assets"],
+        "outputPath": "dist/pokedex",
+        "main": "apps/pokedex/src/main.ts",
+        "tsConfig": "apps/pokedex/tsconfig.app.json",
+        "assets": ["apps/pokedex/src/public"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/car-dealership/webpack.config.js"
+        "webpackConfig": "apps/pokedex/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -27,14 +27,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "car-dealership:build"
+        "buildTarget": "pokedex:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "car-dealership:build:development"
+          "buildTarget": "pokedex:build:development"
         },
         "production": {
-          "buildTarget": "car-dealership:build:production"
+          "buildTarget": "pokedex:build:production"
         }
       }
     },
@@ -42,14 +42,14 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/car-dealership/**/*.ts"]
+        "lintFilePatterns": ["apps/pokedex/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/car-dealership/jest.config.ts",
+        "jestConfig": "apps/pokedex/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
